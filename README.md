@@ -1,10 +1,16 @@
-# test-project
+# vuetify-typescript-vue-router-mobile-spa-basebox
 
-> A Vue.js project
+It's for Practicing Vue - Typescript for personal.
+
+## Features
+
+- Applied Typescript, Vuetify, Vuetify-dialog,
+- Applied Mobile Top, Bottom, Nav.
+- Todo Example use of Localstorage
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 

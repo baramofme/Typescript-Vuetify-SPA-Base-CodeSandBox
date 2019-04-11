@@ -10,7 +10,18 @@ import * as VuetifyDialog from "vuetify-dialog";
 
 Vue.config.productionTip = false;
 
-Vue.use(Vuetify);
+import "vuetify/dist/vuetify.css";
+import colors from "vuetify/es5/util/colors";
+import "material-design-icons-iconfont/dist/material-design-icons.css";
+Vue.use(Vuetify, {
+  theme: {
+    primary: colors.purple,
+    secondary: colors.grey.darken1,
+    accent: colors.shades.black,
+    error: colors.red.accent3
+  }
+});
+// Vue.use(Vuetify);
 Vue.use(VuetifyDialog);
 
 new Vue({
