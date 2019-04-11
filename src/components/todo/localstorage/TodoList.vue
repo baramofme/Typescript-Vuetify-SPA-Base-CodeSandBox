@@ -23,7 +23,7 @@
   </v-content>
 </template>
 <script>
-import { todoService } from "../../services/TodoService";
+import { localService } from "../../../services/localService";
 // secould <router-vue/> cannot regognize typescript component.
 export default {
   data() {
@@ -54,12 +54,12 @@ export default {
         });
     },
     rmTodo(id) {
-      todoService.remove(id);
-      this.todos = todoService.get();
+      localService.remove(id);
+      this.todos = localService.get();
     }
   },
   mounted() {
-    this.todos = todoService.get();
+    this.todos = localService.get();
   }
 };
 </script>

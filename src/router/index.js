@@ -7,8 +7,8 @@ import * as CodeExamples from "../views/CodeExamples";
 import * as MyFavorites from "../views/MyFavorites";
 
 import * as TodoView from "../views/TodoView";
-import * as TodoList from "../components/todo/TodoList";
-import * as AddForm from "../components/todo/AddForm";
+import * as TodoList from "../components/todo/localstorage/TodoList";
+import * as AddForm from "../components/todo/localstorage/AddForm";
 
 Vue.use(VueRouter);
 

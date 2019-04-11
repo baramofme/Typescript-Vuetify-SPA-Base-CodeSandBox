@@ -1,6 +1,6 @@
 import * as Todo from "../models/Todo";
 
-class TodoService {
+class LocalService {
   get(): Array<Todo> {
     let todos = JSON.parse(localStorage.getItem("todos"));
     return todos ? todos : [];
@@ -26,4 +26,4 @@ class TodoService {
   }
 }
 
-export const todoService = new TodoService();
+export const localService = new LocalService();

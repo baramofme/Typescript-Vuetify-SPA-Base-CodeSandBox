@@ -25,7 +25,7 @@
   </v-layout>
 </template>
 <script>
-import { todoService } from "../../services/TodoService";
+import { localService } from "../../../services/localService";
 // secould <router-vue/> cannot regognize typescript component.
 export default {
   data() {
@@ -39,7 +39,7 @@ export default {
     add() {
       this.isSubmitted = true;
       if (this.invalidFeedback() == "") {
-        todoService.add(this.title);
+        localService.add(this.title);
         this.isInvalid = null;
         this.title = "";
         this.isSubmitted = false;
