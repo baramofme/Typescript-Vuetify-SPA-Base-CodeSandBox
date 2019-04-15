@@ -19,7 +19,4 @@ import * as BottomNav from "./components/BottomNav.vue";
 export default class extends Vue {}
 </script>
 <style scoped>
-.container {
-  padding-top: 50px;
-}
 </style>

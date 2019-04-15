@@ -1,28 +1,25 @@
 <template>
-  <v-layout>
-    <h3>Add Todo</h3>
-    <v-form v-model="isInvalid">
-      <!-- 
-        <b-form-group label="Title" :invalid-feedback="invalidFeedback()" :state="getState()">
-        <b-form-input v-model="title" placeholder="title" :state="getState()" ref="title"></b-form-input>
-      </b-form-group>
-      -->
+  <v-content>
+    <v-layout>
+      <h3>Add LocalStorage Todo</h3>
+      <v-form v-model="isInvalid">
+        <v-layout>
+          <v-flex xs12 md4>
+            <v-text-field v-model="title" label="title" required></v-text-field>
+          </v-flex>
+        </v-layout>
+      </v-form>
+
       <v-layout>
         <v-flex xs12 md4>
-          <v-text-field v-model="title" label="title" required></v-text-field>
+          <v-btn class="ml-auto" @click="goBack()">back</v-btn>
+        </v-flex>
+        <v-flex xs12 md4>
+          <v-btn class="ml-2" :variant="'primary'" @click="add()">save</v-btn>
         </v-flex>
       </v-layout>
-    </v-form>
-
-    <v-layout>
-      <v-flex xs12 md4>
-        <v-btn class="ml-auto" @click="goBack()">back</v-btn>
-      </v-flex>
-      <v-flex xs12 md4>
-        <v-btn class="ml-2" :variant="'primary'" @click="add()">save</v-btn>
-      </v-flex>
     </v-layout>
-  </v-layout>
+  </v-content>
 </template>
 <script>
 import { localService } from "../../../services/localService";
@@ -70,7 +67,7 @@ export default {
     },
 
     goBack() {
-      this.$router.push("/todo/list");
+      this.$router.push("/todo/local/list");
     }
   }
 };

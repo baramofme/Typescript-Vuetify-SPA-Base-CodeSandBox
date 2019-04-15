@@ -2,7 +2,7 @@
   <v-content>
     <v-layout>
       <v-flex>
-        <h1>TODO</h1>
+        <h1>LocalStorage TODO</h1>
       </v-flex>
     </v-layout>
     <v-layout>
@@ -17,7 +17,7 @@
     </v-layout>
     <v-layout>
       <v-flex>
-        <v-btn to="/todo/add">Add new Todo</v-btn>
+        <v-btn to="/todo/local/add">Add new Todo</v-btn>
       </v-flex>
     </v-layout>
   </v-content>

@@ -7,8 +7,10 @@ import * as CodeExamples from "../views/CodeExamples";
 import * as MyFavorites from "../views/MyFavorites";
 
 import * as TodoView from "../views/TodoView";
-import * as TodoList from "../components/todo/localstorage/TodoList";
-import * as AddForm from "../components/todo/localstorage/AddForm";
+import * as LocalTodoList from "../components/todo/localstorage/TodoList";
+import * as LocalAddForm from "../components/todo/localstorage/AddForm";
+import * as LoveFieldTodoList from "../components/todo/loveField/TodoList";
+import * as LoveFieldAddForm from "../components/todo/loveField/AddForm";
 
 Vue.use(VueRouter);
 
@@ -28,12 +30,26 @@ export const router = new VueRouter({
     {
       path: "/todo",
       name: "todo",
-      redirect: "todo-list",
+      // redirect: "local-todo-list",
       component: TodoView,
       children: [
-        { path: "", component: TodoList },
-        { path: "list", name: "todo-list", component: TodoList },
-        { path: "add", name: "add-form", component: AddForm }
+        // { path: "", component: TodoList },
+        {
+          path: "local/list",
+          name: "local-todo-list",
+          component: LocalTodoList
+        },
+        { path: "local/add", name: "local-add-form", component: LocalAddForm },
+        {
+          path: "love/list",
+          name: "love-field-todo-list",
+          component: LoveFieldTodoList
+        },
+        {
+          path: "love/add",
+          name: "love-field-add-form",
+          component: LoveFieldAddForm
+        }
       ]
     },
     {

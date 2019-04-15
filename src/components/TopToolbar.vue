@@ -9,7 +9,7 @@
           <v-list-tile-content>
             <v-list-tile-title>
               <span>
-                <a @click="toggleDialog()">다이얼로그 팝업</a>
+                <a @click="toggleDialog()">Pop Dialog</a>
               </span>
             </v-list-tile-title>
           </v-list-tile-content>
@@ -37,7 +37,10 @@
                 <v-icon>{{ child.icon }}</v-icon>
               </v-list-tile-action>
               <v-list-tile-content>
-                <v-list-tile-title>{{ child.text }}</v-list-tile-title>
+                <v-list-tile-title v-if="child.route">
+                  <router-link :to="{ name: child.route }">{{ child.text }}</router-link>
+                </v-list-tile-title>
+                <v-list-tile-title v-else>{{ child.text }}</v-list-tile-title>
               </v-list-tile-content>
             </v-list-tile>
           </v-list-group>
@@ -92,7 +95,16 @@ export default class TopToolbar extends Vue {
     { icon: "contacts", text: "Top Stories", route: "top-stories" },
     { icon: "event", text: "Code Example", route: "code-examples" },
     { icon: "account_balance", text: "My Favorites", route: "my-favorites" },
-    { icon: "account_balance", text: "Todo", route: "todo-list" },
+    {
+      icon: "keyboard_arrow_up",
+      "icon-alt": "keyboard_arrow_down",
+      text: "Todo",
+      model: true,
+      children: [
+        { icon: "done", text: "localstorage Todo", route: "local-todo-list" },
+        { icon: "done", text: "lovefield Todo", route: "love-field-todo-list" }
+      ]
+    },
     {
       icon: "keyboard_arrow_up",
       "icon-alt": "keyboard_arrow_down",

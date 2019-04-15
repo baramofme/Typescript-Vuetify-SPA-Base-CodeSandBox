@@ -13,6 +13,9 @@ Vue.config.productionTip = false;
 import "vuetify/dist/vuetify.css";
 import colors from "vuetify/es5/util/colors";
 import "material-design-icons-iconfont/dist/material-design-icons.css";
+import "./assets/css/style.sass";
+//github.com/CompuIves/codesandbox-client/issues/646
+https: // import "./assets/css/main.styl";
 Vue.use(Vuetify, {
   theme: {
     primary: colors.purple,

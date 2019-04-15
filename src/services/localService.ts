@@ -1,7 +1,7 @@
-import * as Todo from "../models/Todo";
+import * as TodoVO from "../models/TodoVO";
 
 class LocalService {
-  get(): Array<Todo> {
+  get(): Array<TodoVO> {
     let todos = JSON.parse(localStorage.getItem("todos"));
     return todos ? todos : [];
   }
@@ -21,7 +21,7 @@ class LocalService {
     this.save(todos);
   }
 
-  save(todos: Array<Todo>) {
+  save(todos: Array<TodoVO>) {
     localStorage.setItem("todos", JSON.stringify(todos));
   }
 }
