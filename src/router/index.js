@@ -19,13 +19,14 @@ export const router = new VueRouter({
   routes: [
     {
       path: "/",
-      component: {
-        template: `
-        <v-container>
-          <h1>Home page</h1>
-        </v-container>
-        `
-      }
+      redirect: { name: "love-field-todo-list" }
+      // component: {
+      //   template: `
+      //   <v-container>
+      //     <h1>Home page</h1>
+      //   </v-container>
+      //   `
+      // }
     },
     {
       path: "/todo",
